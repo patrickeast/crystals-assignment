@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Crystal Assignment</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.typekit.net/wgv5zvx.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12 title">
+                <h1 class="text-center">Crystal Count!</h1>
+            </div>
+        </div>
+        <br>
+        <div class="container">
+            <div class="row">
+                <div class="col-12 instructions">
+                    <p class="text-center">
+                        Welcome to Crystal Count! Can you get the magical number? Click the button below to generate a random number. Then try to
+                        add up to the random number by clicking on a combination of the crystals below. Good luck!
+                    </p>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="container">
+            <div class="row justify-content-center">
+                <!-- Crystals show up in the following cols -->
+                <div class="col-4 crystalBlue">
+                    <img class="img-fluid" src="assets/images/bluecrystal.png">
+                </div>
+                <div class="col-4 crystalRed">
+                    <img class="img-fluid" src="assets/images/redcrystal.png">
+                </div>
+                <div class="col-4 crystalYellow">
+                    <img class="img-fluid" src="assets/images/yellowcrystal.png">
+                </div>
+
+            </div>
+            <br>
+            <div class="row scoreContainer justify-content-center">
+                <div class="col-3 bg-primary text-white">
+                    <h4 class="text-center" id="userScore">User Score: </h4>
+                </div>
+                <div class="col-2"></div>
+                <div class="col-3 bg-primary text-white">
+                    <h4 class="text-center magicScore">Score to Match: </h4>
+                </div>
+            </div>
+            <br>
+            <div class="row justify-content-center">
+                <div class="col-6">
+                    <button type="button" class="btn btn-success btn-lg btn-block" id="magicNumberGenerator">
+                        Click to Generate the Random Number!
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="modal" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Crystal Count Alert</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body" id="winLossAlert">
+                        <p>You Win! You Lose!</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary">Play again?</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="assets/javascript/game.js"></script>
+</body>
+
+</html>
