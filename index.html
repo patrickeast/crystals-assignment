@@ -26,15 +26,26 @@
             <div class="row">
                 <div class="col-12 instructions">
                     <p class="text-center">
-                        Welcome to Crystal Count! Can you get the magical number? Click the button below to generate a random number. Then try to
-                        add up to the random number by clicking on a combination of the crystals below. Good luck!
+                        Click on the button below to generate a random number.
+                        Then click on a combination of the crystals to match the number. Good luck!
                     </p>
                 </div>
             </div>
         </div>
         <br>
         <div class="container">
-            <div class="row justify-content-center">
+            <div class="row winsLossesContainer justify-content-center">
+                <div class="col-3 text-center text-strong" id="winsCounter">
+                    <p></p>
+                </div>
+                <div class="col-3 text-center text-strong" id="lossesCounter">
+                    <p></p>
+                </div>
+            </div>
+
+            <br>
+
+            <div class="row">
                 <!-- Crystals show up in the following cols -->
                 <div class="col-4 crystalBlue">
                     <img class="img-fluid" src="assets/images/bluecrystal.png">
@@ -45,23 +56,26 @@
                 <div class="col-4 crystalYellow">
                     <img class="img-fluid" src="assets/images/yellowcrystal.png">
                 </div>
-
             </div>
+
             <br>
+            
             <div class="row scoreContainer justify-content-center">
-                <div class="col-3 bg-primary text-white">
+                <div class="col-4 text-white">
                     <h4 class="text-center" id="userScore">User Score: </h4>
                 </div>
                 <div class="col-2"></div>
-                <div class="col-3 bg-primary text-white">
-                    <h4 class="text-center magicScore">Score to Match: </h4>
+                <div class="col-4 text-white">
+                    <h4 class="text-center" id="magicScore">Score to Match: </h4>
                 </div>
             </div>
+           
             <br>
+           
             <div class="row justify-content-center">
                 <div class="col-6">
                     <button type="button" class="btn btn-success btn-lg btn-block" id="magicNumberGenerator">
-                        Click to Generate the Random Number!
+                        Generate Random Number!
                     </button>
                 </div>
             </div>
