@@ -10,24 +10,23 @@ var winsCounter = 0;
 var lossesCounter = 0;
 var userScore = 0;
 
+function resetGame() {
+    $(result).empty();
+    $(userScore).empty();
+    console.log("Reset Game Started");
+    magicButtonClicked = false;
+    userScore = 0;
+    $("#userScore").text("User Score: ");
+    $("#magicScore").text("Score to match: ");
+    var result = Math.floor(Math.random() * (100 - 50) + 50);
+    playGame();
+};
 
 function playGame() {
+    $(magicNumberGenerator).unbind("click");
     $("#winsCounter").text("Wins: " + winsCounter);
     $("#lossesCounter").text("Losses: " + lossesCounter);
     
-    
-    function resetGame() {
-        $(result).empty();
-        $(userScore).empty();
-        console.log("Reset Game Started");
-        magicButtonClicked = false;
-        userScore = 0;
-        $("#userScore").text("User Score: " + " " + userScore);
-        $("#magicScore").text("Score to match: ");
-
-        playGame();
-    };
-
     console.log("Play Game is running.");
 
     $(magicNumberGenerator).on("click", function () {
@@ -42,7 +41,7 @@ function playGame() {
         console.log("User Score is: " + userScore + " And the Magic Number is: " + result);
         if (userScore == result) {
             winGame();
-        } else if (userScore > result) {
+        } else if (userScore >= result) {
             loseGame();
         }
     });
@@ -51,9 +50,9 @@ function playGame() {
         userScore = (userScore + 10);
         $("#userScore").text("User Score: " + " " + userScore);
         console.log("User Score is: " + userScore + " And the Magic Number is: " + result);
-        if (userScore == result) {
+        if (userScore === result) {
             winGame();
-        } else if (userScore > result) {
+        } else if (userScore >= result) {
             loseGame();
         }
     });
@@ -62,15 +61,15 @@ function playGame() {
         userScore = (userScore + 3);
         $("#userScore").text("User Score: " + " " + userScore);
         console.log("User Score is: " + userScore + " And the Magic Number is: " + result);
-        if (userScore == result) {
+        if (userScore === result) {
             winGame();
-        } else if (userScore > result) {
+        } else if (userScore >= result) {
             loseGame();
         }
     });
 
     function winGame() {
-        winsCounter ++;
+        winsCounter++;
         $("#winsCounter").html("Wins: " + winsCounter + 1);
         console.log("You win!");
         alert("You Win!");
@@ -86,6 +85,4 @@ function playGame() {
     }
 }
 
-
-
-playGame();
+resetGame();
