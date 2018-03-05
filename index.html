@@ -35,10 +35,10 @@
         <div class="container">
             <div class="row winsLossesContainer justify-content-center">
                 <div class="col-3 text-center text-strong">
-                    <p id="winsCounter"></p>
+                    <h4 id="winsCounter"></h4>
                 </div>
                 <div class="col-3 text-center text-strong">
-                    <p id="lossesCounter"></p>
+                    <h4 id="lossesCounter"></h4>
                 </div>
             </div>
 
@@ -46,14 +46,17 @@
 
             <div class="row">
                 <!-- Crystals show up in the following cols -->
-                <div class="col-4 crystalBlue">
+                <div class="col-3 crystalBlue">
                     <img class="img-fluid" src="assets/images/bluecrystal.png">
                 </div>
-                <div class="col-4 crystalRed">
+                <div class="col-3 crystalRed">
                     <img class="img-fluid" src="assets/images/redcrystal.png">
                 </div>
-                <div class="col-4 crystalYellow">
+                <div class="col-3 crystalYellow">
                     <img class="img-fluid" src="assets/images/yellowcrystal.png">
+                </div>
+                <div class="col-3 crystalPurple">
+                    <img class="img-fluid" src="assets/images/purplecrystal.png">
                 </div>
             </div>
 
@@ -63,7 +66,11 @@
                 <div class="col-4 text-white">
                     <h4 class="text-center" id="userScore">User Score: </h4>
                 </div>
-                <div class="col-2"></div>
+                <div class="col-3">
+                    <button type="button" class="btn btn-dark btn-lg btn-block" id="magicNumberGenerator">
+                        Get number!
+                    </button>
+                </div>
                 <div class="col-4 text-white">
                     <h4 class="text-center" id="magicScore">Score to Match: </h4>
                 </div>
@@ -71,34 +78,6 @@
 
             <br>
 
-            <div class="row justify-content-center">
-                <div class="col-3">
-                    <button type="button" class="btn btn-dark btn-lg btn-block" id="magicNumberGenerator">
-                        Get number!
-                    </button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="container">
-        <div class="modal" tabindex="-1" role="dialog">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title">Crystal Count Alert</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body" id="winLossAlert">
-                        <p>You Win! You Lose!</p>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-primary">Play again?</button>
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    </div>
-                </div>
-            </div>
         </div>
     </div>
 

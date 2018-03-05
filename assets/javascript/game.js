@@ -1,3 +1,5 @@
+
+
 var result = Math.floor(Math.random() * (100 - 50) + 50);
 var magicNumberGenerator = $("#magicNumberGenerator");
 var crystalRed = $(".crystalRed");
@@ -10,15 +12,19 @@ var winsCounter = 0;
 var lossesCounter = 0;
 var userScore = 0;
 
+
+// On game reset, I need to unbind the click events that occur, clear out values, and reset the random number.
 function resetGame() {
-    $(result).empty();
-    $(userScore).empty();
+    $(".crystalRed").unbind("click");
+    $(".crystalYellow").unbind("click");
+    $(".crystalBlue").unbind("click");
+    $(".crystalPurple").unbind("click");
     console.log("Reset Game Started");
     magicButtonClicked = false;
     userScore = 0;
     $("#userScore").text("User Score: ");
     $("#magicScore").text("Score to match: ");
-    var result = Math.floor(Math.random() * (100 - 50) + 50);
+    result = Math.floor(Math.random() * (200 - 50) + 50);
     playGame();
 };
 
@@ -26,7 +32,7 @@ function playGame() {
     $(magicNumberGenerator).unbind("click");
     $("#winsCounter").text("Wins: " + winsCounter);
     $("#lossesCounter").text("Losses: " + lossesCounter);
-    
+
     console.log("Play Game is running.");
 
     $(magicNumberGenerator).on("click", function () {
@@ -35,54 +41,65 @@ function playGame() {
         console.log("The magic number is: " + result);
     });
 
-    $(".crystalRed").on("click", function () {
+    if ($(".crystalRed").on("click", function () {
         userScore = (userScore + 1);
         $("#userScore").html("User Score: " + " " + userScore);
         console.log("User Score is: " + userScore + " And the Magic Number is: " + result);
         if (userScore == result) {
             winGame();
-        } else if (userScore >= result) {
+        } else if (userScore > result) {
             loseGame();
         }
-    });
+    }));
 
-    $(".crystalBlue").on("click", function () {
+    if ($(".crystalBlue").on("click", function () {
         userScore = (userScore + 10);
         $("#userScore").text("User Score: " + " " + userScore);
         console.log("User Score is: " + userScore + " And the Magic Number is: " + result);
         if (userScore === result) {
             winGame();
-        } else if (userScore >= result) {
+        } else if (userScore > result) {
             loseGame();
         }
-    });
+    }));
 
-    $(".crystalYellow").on("click", function () {
+    if ($(".crystalYellow").on("click", function () {
         userScore = (userScore + 3);
         $("#userScore").text("User Score: " + " " + userScore);
         console.log("User Score is: " + userScore + " And the Magic Number is: " + result);
         if (userScore === result) {
             winGame();
-        } else if (userScore >= result) {
+        } else if (userScore > result) {
             loseGame();
         }
-    });
-
-    function winGame() {
-        winsCounter++;
-        $("#winsCounter").html("Wins: " + winsCounter + 1);
-        console.log("You win!");
-        alert("You Win!");
-        resetGame();
-    }
-
-    function loseGame() {
-        lossesCounter++;
-        $("#lossesCounter").html("Losses: " + lossesCounter);
-        console.log("You lose!");
-        alert("Your final score is " + userScore + ". You lose.");
-        resetGame();
-    }
+    }));
+    
+    if ($(".crystalPurple").on("click", function () {
+        userScore = (userScore + 7);
+        $("#userScore").text("User Score: " + " " + userScore);
+        console.log("User Score is: " + userScore + " And the Magic Number is: " + result);
+        if (userScore === result) {
+            winGame();
+        } else if (userScore > result) {
+            loseGame();
+        }
+    }));
 }
 
-resetGame();
+
+function winGame() {
+    winsCounter++;
+    $("#winsCounter").html("Wins: " + winsCounter);
+    console.log("You win!");
+    resetGame();
+}
+
+function loseGame() {
+    lossesCounter++;
+    $("#lossesCounter").html("Losses: " + lossesCounter);
+    console.log("You lose!");
+    alert("Your final score is " + userScore + ". You lose.");
+    resetGame();
+}
+
+playGame();
