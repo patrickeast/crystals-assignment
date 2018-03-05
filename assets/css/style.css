@@ -1,6 +1,6 @@
 h1 {
     font-family: "kon-tiki-aloha-jf",sans-serif;
-    font-size: 72px;
+    font-size: 60px;
     padding: 20px;
     color: #444;
 }
@@ -13,7 +13,7 @@ h4 {
 
 p {
     font-family: "mrs-eaves-roman-all-petite-c",sans-serif;
-    font-size: 36px;
+    font-size: 24px;
     color: #444;
 }
 
@@ -32,4 +32,18 @@ img {
 
 #magicScore {
     padding: 5px;
+}
+
+#youWin {
+    background-color: green;
+    color: white;
+    font-family: "kon-tiki-aloha-jf",sans-serif;
+    font-size: 24px;
+}
+
+#youLose {
+    background-color: red;
+    color: white;
+    font-family: "kon-tiki-aloha-jf",sans-serif;
+    font-size: 24px;
 }

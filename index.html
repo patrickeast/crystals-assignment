@@ -25,8 +25,7 @@
             <div class="row">
                 <div class="col-12 instructions">
                     <p class="text-center">
-                        Click on the button below to generate a random number. Then click on a combination of the crystals to match the number. Good
-                        luck!
+                        Click you match the Crystal Count? Click below to get started.
                     </p>
                 </div>
             </div>
@@ -34,28 +33,33 @@
         <br>
         <div class="container">
             <div class="row winsLossesContainer justify-content-center">
-                <div class="col-3 text-center text-strong">
+                <div class="col-xs-6 col-md-3 text-center text-strong">
                     <h4 id="winsCounter"></h4>
                 </div>
-                <div class="col-3 text-center text-strong">
+                <div class="col-xs-6 col-md-3 text-center text-strong">
                     <h4 id="lossesCounter"></h4>
                 </div>
             </div>
 
             <br>
 
+            <div class="row justify-content-center">
+                <div class="col-12 col-md-6 text-center" id="youWin">WINNER!</div>
+                <div class="col-12 col-md-6 text-center" id="youLose">You lose...Try again!</div>
+            </div>
+
             <div class="row">
                 <!-- Crystals show up in the following cols -->
-                <div class="col-3 crystalBlue">
+                <div class="col-6 col-md-3 crystalBlue">
                     <img class="img-fluid" src="assets/images/bluecrystal.png">
                 </div>
-                <div class="col-3 crystalRed">
+                <div class="col-6 col-md-3 crystalRed">
                     <img class="img-fluid" src="assets/images/redcrystal.png">
                 </div>
-                <div class="col-3 crystalYellow">
+                <div class="col-6 col-md-3 crystalYellow">
                     <img class="img-fluid" src="assets/images/yellowcrystal.png">
                 </div>
-                <div class="col-3 crystalPurple">
+                <div class="col-6 col-md-3 crystalPurple">
                     <img class="img-fluid" src="assets/images/purplecrystal.png">
                 </div>
             </div>
@@ -63,15 +67,15 @@
             <br>
 
             <div class="row scoreContainer justify-content-center">
-                <div class="col-4 text-white">
+                <div class="col-12 col-md-4 text-white">
                     <h4 class="text-center" id="userScore">User Score: </h4>
                 </div>
-                <div class="col-3">
+                <div class="col-12 col-md-4">
                     <button type="button" class="btn btn-dark btn-lg btn-block" id="magicNumberGenerator">
                         Get number!
                     </button>
                 </div>
-                <div class="col-4 text-white">
+                <div class="col-12 col-md-4 text-white">
                     <h4 class="text-center" id="magicScore">Score to Match: </h4>
                 </div>
             </div>

@@ -1,5 +1,7 @@
 
 
+$("#youWin").hide();
+$("#youLose").hide();
 var result = Math.floor(Math.random() * (100 - 50) + 50);
 var magicNumberGenerator = $("#magicNumberGenerator");
 var crystalRed = $(".crystalRed");
@@ -15,6 +17,8 @@ var userScore = 0;
 
 // On game reset, I need to unbind the click events that occur, clear out values, and reset the random number.
 function resetGame() {
+    $("#youWin").hide();
+    $("#youLose").hide();
     $(".crystalRed").unbind("click");
     $(".crystalYellow").unbind("click");
     $(".crystalBlue").unbind("click");
@@ -29,6 +33,8 @@ function resetGame() {
 };
 
 function playGame() {
+    $("#youWin").hide();
+    $("#youLose").hide();
     $(magicNumberGenerator).unbind("click");
     $("#winsCounter").text("Wins: " + winsCounter);
     $("#lossesCounter").text("Losses: " + lossesCounter);
@@ -73,7 +79,7 @@ function playGame() {
             loseGame();
         }
     }));
-    
+
     if ($(".crystalPurple").on("click", function () {
         userScore = (userScore + 7);
         $("#userScore").text("User Score: " + " " + userScore);
@@ -91,15 +97,30 @@ function winGame() {
     winsCounter++;
     $("#winsCounter").html("Wins: " + winsCounter);
     console.log("You win!");
-    resetGame();
+    
+    $("#youWin").show();
+    setInterval(function () {
+        $("#youWin").hide();
+    }, 2000);
+
+    setTimeout(function () {
+        resetGame();
+    }, 2000);
 }
+
 
 function loseGame() {
     lossesCounter++;
     $("#lossesCounter").html("Losses: " + lossesCounter);
     console.log("You lose!");
-    alert("Your final score is " + userScore + ". You lose.");
-    resetGame();
-}
+    $("#youLose").show();
+    
+    setInterval(function () {
+        $("#youLose").hide();
+    }, 2000);
+    
+    setTimeout(function () {
+        resetGame();
+    }, 2000);}
 
 playGame();
